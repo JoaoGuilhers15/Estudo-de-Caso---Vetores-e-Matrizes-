@@ -1,20 +1,36 @@
 #include <stdio.h>
 
-int linha = 3;
-int coluna = 3;
-int total;
+const int linha = 3;
+const int coluna = 3;
 
+int Estruturamatriz(int linha, int c){
 
-void zerarMatriz(int vet[]){
     int k;
+
+    k = linha * coluna + c;
+
+    return k;
+}
+
+int Dimensionar_matriz(int linha, int coluna){
+
+    return linha * coluna;
+
+}
+
+void ZerarMatriz(int vet[]){
+    int k;
+    int total = Dimensionar_matriz (linha, coluna);
+
     for(k = 0; k < total; k++){
         vet[k] = 0;
     }
 }
 
-void imprimirmatriz(int vet[],int l,int c){
+void Imprimirmatriz(int vet[]){
 
     int k;
+    int total = Dimensionar_matriz (linha, coluna);
 
     for(k = 0; k < total; k++){
         printf("%d ", vet[k]);
@@ -24,14 +40,28 @@ void imprimirmatriz(int vet[],int l,int c){
     }
 }
 
+int Busca_matriz(int vet[], int linha, int coluna){
+
+    int n, num;
+
+    num = Estruturamatriz(linha, );
+
+    return vet[num];
+}
 
 int main(){
-    total = linha*coluna;
-    dimensionarMatriz(linha, coluna);
-    int vet[linha*coluna];
 
-    zerarMatriz(vet);
+    int l = 2, c = 2;
+    int dimensiona = DimensionarMatriz(linha, coluna);
 
-    imprimirmatriz(vet, linha, coluna);
+    int vet[dimensiona], linha, coluna;
+
+    ZerarMatriz(vet);
+
+    Imprimirmatriz(vet); 
+
+    int buscou = Busca_matriz(vet, l, c);
+    printf("O elemento que está na linha 2 coluna 2 eh: %d", buscou);
+    
     
 }
